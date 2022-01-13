@@ -34,7 +34,10 @@ class Login extends React.Component {
     const { name } = this.state;
 
     this.setState({ loading: true }, () => createUser({ name })
-      .then(this.setState({ loading: false, redirect: true })));
+      .then(this.setState({
+        loading: false,
+        redirect: true,
+      })));
   }
 
   render() {
