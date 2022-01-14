@@ -3,6 +3,8 @@ import React from 'react';
 import Header from '../components/Header';
 import MusicCard from '../components/MusicCard';
 import getMusics from '../services/musicsAPI';
+import { addSong } from '../services/favoriteSongsAPI';
+import Loading from '../components/Loading';
 
 class Album extends React.Component {
   constructor() {
@@ -12,6 +14,7 @@ class Album extends React.Component {
       musics: [],
       artistName: '',
       albumName: '',
+      loading: false,
     };
   }
 
@@ -28,22 +31,28 @@ class Album extends React.Component {
   }
 
   render() {
-    const { musics, artistName, albumName } = this.state;
+    const { musics, artistName, albumName, loading } = this.state;
 
     return (
       <div data-testid="page-album">
         <Header />
-        <h1 data-testid="artist-name">
-          {artistName}
-        </h1>
-        <h2 data-testid="album-name">
-          {albumName}
-        </h2>
-        {musics
-          .filter((a, index) => index !== 0)
-          .map((music) => (
-            <MusicCard key={ music.trackName } music={ music } />
-          ))}
+        {loading ? <Loading /> : (
+          <>
+            <h1 data-testid="artist-name">
+              {artistName}
+            </h1>
+            <h2 data-testid="album-name">
+              {albumName}
+            </h2>
+            {musics
+              .filter((a, index) => index !== 0)
+              .map((music) => (
+                <MusicCard
+                  key={ music.trackName }
+                  music={ music }
+                />
+              ))}
+          </>)}
       </div>
     );
   }
