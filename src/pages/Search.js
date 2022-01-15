@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
-// import Loading from '../components/Loading';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 
 class Search extends React.Component {
@@ -83,7 +82,7 @@ class Search extends React.Component {
             </button>
           </form>
         )}
-        {notFoundAlbums && (<h3>Nenhum álbum foi encontrado</h3>)}
+        {notFoundAlbums && <h3>Nenhum álbum foi encontrado</h3>}
         {albums.length >= 1 && (
           <section>
             <h2>

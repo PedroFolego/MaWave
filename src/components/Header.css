@@ -1,0 +1,28 @@
+.header {
+  align-items: center;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-flow: column;
+}
+
+.header h2 {
+  color: #e6e6e6;
+  font-size: 25px;
+}
+
+
+.section-links {
+  color: #e6e6e6;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.section-links .link {
+  border: solid 1px #e6e6e6;
+  color: #e6e6e6;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 5px;
+}
