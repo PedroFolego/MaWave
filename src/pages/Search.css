@@ -1,0 +1,117 @@
+.search {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.search-section {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  border-radius: 10px;
+}
+
+.search-section h1 {
+  margin: 30px 0;
+  font-weight: 700;
+  color: #191919;
+}
+
+.search-section form {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.search-section input {
+  width: 200px;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.search-section button {
+  margin-top: 10px;
+  width: 125px;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: 2px solid #ff7700;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.search-section button:disabled {
+  cursor: not-allowed;
+  transition: none;
+  border: 3px solid #cccccc;
+  transition: 0.3s;
+}
+
+.search-section button:hover:enabled {
+  background-color: #ff7700;
+  color: #cccccc;
+  border: 3px solid #cccccc;
+}
+
+.section-music {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.section-music h2 {
+  color: #191919;
+  padding: 20px;
+  font-size: 25px;
+}
+
+.section-albums {
+  display: flex;
+  width: 1000px;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.album {
+  text-decoration: none;
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 300px;
+  height: 300px;
+  margin: 5px;
+  background-color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: column;
+  padding: 5px;
+}
+
+.album h3, .album h4 {
+
+  text-decoration: none;
+  color: #cccccc;
+}
+
+.foto {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
+}
+
+.album img {
+  width: 150px;
+  height: 150px;
+}
+
+/* https://www.w3schools.com/howto/howto_css_display_element_hover.asp */

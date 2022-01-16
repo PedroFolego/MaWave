@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import './Search.css';
 
 class Search extends React.Component {
   constructor() {
@@ -21,10 +22,6 @@ class Search extends React.Component {
     this.inputChange = this.inputChange.bind(this);
     this.searchMusic = this.searchMusic.bind(this);
     this.validationAlbums = this.validationAlbums.bind(this);
-  }
-
-  componentDidUpdate() {
-
   }
 
   validateBtn() {
@@ -60,48 +57,56 @@ class Search extends React.Component {
   render() {
     const { btn, albums, notFoundAlbums, loading, choseArtist } = this.state;
     return (
-      <div data-testid="page-search">
+      <div data-testid="page-search" className="search">
         <Header />
         {loading ? <Loading /> : (
-          <form onSubmit={ (e) => e.preventDefault() }>
-            <label htmlFor="input-music">
-              <input
-                id="input-music"
-                type="text"
-                data-testid="search-artist-input"
-                onChange={ this.inputChange }
-              />
-            </label>
-            <button
-              type="submit"
-              data-testid="search-artist-button"
-              disabled={ btn }
-              onClick={ this.searchMusic }
-            >
-              Pesquisar
-            </button>
-          </form>
+          <div className="search-section">
+            <h1>O que gostaria ouvir?</h1>
+            <form onSubmit={ (e) => e.preventDefault() }>
+              <label htmlFor="input-music">
+                <input
+                  id="input-music"
+                  type="text"
+                  data-testid="search-artist-input"
+                  onChange={ this.inputChange }
+                  placeholder="Digite o nome do artista/banda"
+                />
+              </label>
+              <button
+                type="submit"
+                data-testid="search-artist-button"
+                disabled={ btn }
+                onClick={ this.searchMusic }
+              >
+                Pesquisar
+              </button>
+            </form>
+          </div>
         )}
         {notFoundAlbums && <h3>Nenhum álbum foi encontrado</h3>}
         {albums.length >= 1 && (
-          <section>
+          <section className="section-music">
             <h2>
               Resultado de álbuns de:
               {' '}
               {choseArtist}
             </h2>
-            {albums.map((album) => (
-              <Link
-                key={ album.collectionName }
-                to={ `/album/${album.collectionId}` }
-                data-testid={ `link-to-album-${album.collectionId}` }
-              >
-                <div>
-                  <h3>{ album.collectionName }</h3>
-                  <h4>{ album.artistName }</h4>
-                  <img src={ album.artworkUrl100 } alt={ album.collectionName } />
-                </div>
-              </Link>))}
+            <div className="section-albums">
+              {albums.map((album) => (
+                <Link
+                  key={ album.collectionName }
+                  to={ `/album/${album.collectionId}` }
+                  data-testid={ `link-to-album-${album.collectionId}` }
+                >
+                  <div className="album">
+                    <h3>{ album.collectionName }</h3>
+                    <div className="foto">
+                      <h4>{ album.artistName }</h4>
+                      <img src={ album.artworkUrl100 } alt={ album.collectionName } />
+                    </div>
+                  </div>
+                </Link>))}
+            </div>
           </section>)}
       </div>
     );

@@ -1,0 +1,86 @@
+.body {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  justify-content: center;
+  height: 300px;
+  width: 400px;
+  background-color: #333333;
+  border-radius: 10px;
+}
+
+.login h1 {
+  width: 100%;
+  color: #e6e6e6;
+  font-size: 40px;
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e6e6e6;
+  margin: 15px 0 10px 0;
+}
+
+.form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 10px 0;
+}
+
+.form label {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  font-weight: 700;
+}
+
+.form input {
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.form input::placeholder {
+  color: #adadad;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.form button {
+  width: 125px;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: 3px solid #ff7700;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.form button:disabled {
+  cursor: not-allowed;
+  transition: none;
+  border: 3px solid #cccccc;
+  transition: 0.3s;
+}
+
+.form button:hover:enabled {
+  background-color: #ff7700;
+  color: #cccccc;
+  border: 3px solid #cccccc;
+}
+
+/* So falta mudar as cores */
+/* https://www.youtube.com/watch?v=eeHqZeJ9Vqc&ab_channel=CodingNepal */

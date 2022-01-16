@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import MusicCard from '../components/MusicCard';
 import getMusics from '../services/musicsAPI';
 import Loading from '../components/Loading';
+import './Album.css';
 
 class Album extends React.Component {
   constructor() {
@@ -33,7 +34,7 @@ class Album extends React.Component {
     const { musics, artistName, albumName, loading } = this.state;
 
     return (
-      <div data-testid="page-album">
+      <div data-testid="page-album" className="album-section">
         <Header />
         {loading ? <Loading /> : (
           <>

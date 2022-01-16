@@ -3,6 +3,7 @@ import React from 'react';
 import LOWEST_NUMBER from '../constants';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
+import './Login.css';
 
 class Login extends React.Component {
   constructor() {
@@ -43,29 +44,35 @@ class Login extends React.Component {
   render() {
     const { btn, loading, redirect } = this.state;
     return (
-      <div data-testid="page-login">
-        { redirect && <Redirect to="/search" />}
-        { loading ? <Loading /> : (
-          <form onSubmit={ (e) => e.preventDefault() }>
-            <label htmlFor="name-input">
-              <input
-                id="name-input"
-                type="text"
-                data-testid="login-name-input"
-                onChange={ this.inputChange }
-              />
-            </label>
-            <button
-              id="btn-input"
-              type="submit"
-              data-testid="login-submit-button"
-              disabled={ btn }
-              onClick={ this.validateUser }
-            >
-              Entrar
-            </button>
-          </form>
-        )}
+      <div data-testid="page-login" className="body">
+        <div className="login">
+          { redirect && <Redirect to="/search" />}
+          { loading ? <Loading /> : (
+            <>
+              <h1>Login</h1>
+              <form onSubmit={ (e) => e.preventDefault() } className="form">
+                <label htmlFor="name-input">
+                  <input
+                    id="name-input"
+                    type="text"
+                    data-testid="login-name-input"
+                    onChange={ this.inputChange }
+                    placeholder="Digite seu nome"
+                  />
+                </label>
+                <button
+                  id="btn-input"
+                  type="submit"
+                  data-testid="login-submit-button"
+                  disabled={ btn }
+                  onClick={ this.validateUser }
+                >
+                  Entrar
+                </button>
+              </form>
+            </>
+          )}
+        </div>
       </div>
     );
   }

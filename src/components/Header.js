@@ -24,30 +24,35 @@ class Header extends React.Component {
 
     return (
       <header className="header" data-testid="header-component">
-        {loading ? <Loading /> : <h2 data-testid="header-user-name">{ name }</h2> }
-        <section className="section-links">
-          <Link
-            className="link"
-            to="/search"
-            data-testid="link-to-search"
-          >
-            Procurar
-          </Link>
-          <Link
-            className="link"
-            to="/favorites"
-            data-testid="link-to-favorites"
-          >
-            Favoritos
-          </Link>
-          <Link
-            className="link"
-            to="/profile"
-            data-testid="link-to-profile"
-          >
-            Perfil
-          </Link>
-        </section>
+        <div className="header-section">
+          <div className="logo-name">
+            {loading ? <Loading /> : <h1 data-testid="header-user-name">{ name }</h1> }
+            <div className="hide">Olá! :)</div>
+          </div>
+          <section className="section-links">
+            <Link
+              className="link"
+              to="/search"
+              data-testid="link-to-search"
+            >
+              <h2>Procurar</h2>
+            </Link>
+            <Link
+              className="link"
+              to="/favorites"
+              data-testid="link-to-favorites"
+            >
+              <h2>Favoritos</h2>
+            </Link>
+            <Link
+              className="link"
+              to="/profile"
+              data-testid="link-to-profile"
+            >
+              <h2>Perfil</h2>
+            </Link>
+          </section>
+        </div>
       </header>
     );
   }
