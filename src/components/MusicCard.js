@@ -10,7 +10,6 @@ class MusicCard extends React.Component {
 
     this.state = {
       favorite: false,
-      loading: false,
     };
     this.saveSong = this.saveSong.bind(this);
   }
@@ -29,20 +28,23 @@ class MusicCard extends React.Component {
   }
 
   saveSong({ target: { checked } }) {
-    const { music } = this.props;
-    this.setState({ loading: true });
+    const { music, changeLoading } = this.props;
+    changeLoading();
+    this.setState((prevState) => ({ favorite: !prevState.favorite }));
     if (checked) {
-      addSong(music).then(() => this.setState({ favorite: true, loading: false }));
+      addSong(music).then(() => this.setState({ favorite: true }));
     } else {
-      removeSong(music).then(() => this.setState({ favorite: false, loading: false }));
+      removeSong(music).then(() => this.setState({ favorite: false }));
     }
+    changeLoading();
   }
 
   render() {
     const { favorite, loading } = this.state;
-    const { music: { trackName, previewUrl, trackId } } = this.props;
+    const { music: { trackName, previewUrl, trackId }, changeLoading } = this.props;
     return (
       <div>
+        <button type="button" onClick={ this.saveSong }>aperte</button>
         <div className="container-music">
           <div className="music">
             <h4>{trackName}</h4>
@@ -59,7 +61,7 @@ class MusicCard extends React.Component {
               data-testid={ `checkbox-music-${trackId}` }
               id={ trackName }
               type="checkbox"
-              onClick={ this.saveSong }
+              onChange={ this.saveSong }
               checked={ favorite }
               className="btn"
             />
@@ -76,7 +78,7 @@ export default MusicCard;
 MusicCard.propTypes = {
   music: PropTypes.shape({
     trackName: PropTypes.string,
-    trackId: PropTypes.string,
+    trackId: PropTypes.number,
     previewUrl: PropTypes.string,
   }).isRequired,
 };
