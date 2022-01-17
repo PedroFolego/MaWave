@@ -48,7 +48,7 @@ class Search extends React.Component {
 
   async searchMusic() {
     const { name } = this.state;
-    this.setState({ loading: true, albums: [], notFoundAlbums: false });
+    this.setState({ loading: true, albums: [], notFoundAlbums: false, btn: true });
     const artist = await searchAlbumsAPI(name);
 
     this.validationAlbums(artist);
@@ -97,13 +97,14 @@ class Search extends React.Component {
                   key={ album.collectionName }
                   to={ `/album/${album.collectionId}` }
                   data-testid={ `link-to-album-${album.collectionId}` }
+                  className="div-album"
                 >
                   <div className="album">
                     <h3>{ album.collectionName }</h3>
-                    <div className="foto">
-                      <h4>{ album.artistName }</h4>
-                      <img src={ album.artworkUrl100 } alt={ album.collectionName } />
-                    </div>
+                    <h4>{ album.artistName }</h4>
+                  </div>
+                  <div className="foto">
+                    <img src={ album.artworkUrl100 } alt={ album.collectionName } />
                   </div>
                 </Link>))}
             </div>

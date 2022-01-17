@@ -35,21 +35,21 @@ class Header extends React.Component {
               to="/search"
               data-testid="link-to-search"
             >
-              <h2>Procurar</h2>
+              <h2 className="header-link">Procurar</h2>
             </Link>
             <Link
               className="link"
               to="/favorites"
               data-testid="link-to-favorites"
             >
-              <h2>Favoritos</h2>
+              <h2 className="header-link">Favoritos</h2>
             </Link>
             <Link
               className="link"
               to="/profile"
               data-testid="link-to-profile"
             >
-              <h2>Perfil</h2>
+              <h2 className="header-link">Perfil</h2>
             </Link>
           </section>
         </div>

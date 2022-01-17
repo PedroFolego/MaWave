@@ -1,0 +1,23 @@
+.music {
+  padding: 10px;
+}
+
+.container-music {
+  display: flex;
+  align-items: center;
+}
+
+.music h4 {
+  color: #e6e6e6;
+  padding: 0 0 10px 15px;
+  font-size: 20px;
+}
+
+.favorite-btn {
+  color: #ff5c33;
+  padding-top: 25px;
+}
+
+.btn {
+  margin-left: 5px;
+}

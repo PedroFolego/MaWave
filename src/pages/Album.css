@@ -3,3 +3,17 @@
   flex-flow: column;
   align-items: center;
 }
+
+.album-section h1 {
+  margin: 20px;
+  color: #e6e6e6;
+  font-size: 50px;
+}
+
+.album-section .album-name {
+  border-radius: 50px;
+  border: 1px solid #e62e00;
+  padding: 20px;
+  color: #e62e00;
+  margin-bottom: 30px;
+}

@@ -41,7 +41,7 @@ class Album extends React.Component {
             <h1 data-testid="artist-name">
               {artistName}
             </h1>
-            <h2 data-testid="album-name">
+            <h2 data-testid="album-name" className="album-name">
               {albumName}
             </h2>
             {musics
