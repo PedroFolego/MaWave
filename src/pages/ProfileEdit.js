@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 import { getUser, updateUser } from '../services/userAPI';
+import './ProfileEdit.css';
 
 class ProfileEdit extends React.Component {
   constructor() {
@@ -47,7 +48,8 @@ class ProfileEdit extends React.Component {
       image,
       description,
       email,
-      loading: false });
+      loading: false },
+    () => this.validationBtn());
   }
 
   saveUser() {
@@ -77,63 +79,66 @@ class ProfileEdit extends React.Component {
   render() {
     const { btnDisable, loading, name, image, description, email, redirect } = this.state;
     return (
-      <div data-testid="page-profile-edit">
+      <div data-testid="page-profile-edit" className="section-profile-edit">
         <Header />
         {loading ? <Loading /> : (
-          <form onSubmit={ (e) => e.preventDefault() }>
-            <label htmlFor="name">
-              Nome
-              <input
-                id="name"
-                name="name"
-                value={ name }
-                onChange={ this.handleChange }
-                type="text"
-                data-testid="edit-input-name"
-              />
-            </label>
-            <label htmlFor="email">
-              Email
-              <input
-                id="email"
-                name="email"
-                value={ email }
-                onChange={ this.handleChange }
-                type="email"
-                data-testid="edit-input-email"
-              />
-            </label>
-            <label htmlFor="description">
-              Descrição
-              <input
-                id="description"
-                name="description"
-                value={ description }
-                onChange={ this.handleChange }
-                type="text"
-                data-testid="edit-input-description"
-              />
-            </label>
-            <label htmlFor="image">
-              Foto
-              <input
-                id="image"
-                name="image"
-                value={ image }
-                onChange={ this.handleChange }
-                type="text"
-                data-testid="edit-input-image"
-              />
-            </label>
-            <button
-              type="submit"
-              data-testid="edit-button-save"
-              disabled={ btnDisable }
-              onClick={ this.saveUser }
-            >
-              Salvar
-            </button>
-          </form>
+          <>
+            <h1>Edite seu Perfil</h1>
+            <form onSubmit={ (e) => e.preventDefault() } className="form-edit">
+              <label htmlFor="name">
+                <p>Seu nome:</p>
+                <input
+                  id="name"
+                  name="name"
+                  value={ name }
+                  onChange={ this.handleChange }
+                  type="text"
+                  data-testid="edit-input-name"
+                />
+              </label>
+              <label htmlFor="email">
+                <p>Email:</p>
+                <input
+                  id="email"
+                  name="email"
+                  value={ email }
+                  onChange={ this.handleChange }
+                  type="email"
+                  data-testid="edit-input-email"
+                />
+              </label>
+              <label htmlFor="description">
+                <p>Descrição:</p>
+                <input
+                  id="description"
+                  name="description"
+                  value={ description }
+                  onChange={ this.handleChange }
+                  type="text"
+                  data-testid="edit-input-description"
+                />
+              </label>
+              <label htmlFor="image">
+                <p>Foto de perfil:</p>
+                <input
+                  id="image"
+                  name="image"
+                  value={ image }
+                  onChange={ this.handleChange }
+                  type="text"
+                  data-testid="edit-input-image"
+                />
+              </label>
+              <button
+                type="submit"
+                data-testid="edit-button-save"
+                disabled={ btnDisable }
+                onClick={ this.saveUser }
+              >
+                Salvar
+              </button>
+            </form>
+          </>
         )}
         {redirect && <Redirect to="/profile" />}
       </div>

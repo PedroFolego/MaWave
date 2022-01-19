@@ -1,0 +1,72 @@
+.section-profile-edit {
+  align-items: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.section-profile-edit h1 {
+  color: #e6e6e6;
+  font-size: 50px;
+  margin: 20px;
+}
+
+.form-edit {
+  align-items: center;
+  background-color: #cccccc;
+  border-radius: 20px;
+  display: flex;
+  flex-flow: column;
+  min-height: 300px;
+  padding: 40px 0;
+  width: 600px;
+}
+
+.form-edit label {
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-grow: 1;
+  margin: 5px;
+  padding: 10px;
+  width: 460px;
+}
+
+.form-edit p {
+  width: 200px;
+}
+
+.form-edit input {
+  background-color: #cccccc;
+  border: none;
+  border-radius: 10px;
+  margin: 10px;
+  outline: none;
+  padding: 15px;
+}
+
+.form-edit button {
+  border: 3px solid #ff5c33;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  margin-top: 15px;
+  outline: none;
+  padding: 10px;
+  text-transform: uppercase;
+  transition: 0.3s;
+  width: 125px;
+}
+
+.form-edit button:disabled {
+  border: #cccccc 3px solid;
+  cursor: not-allowed;
+  transition: 0.3s;
+}
+
+.form-edit button:hover:enabled {
+  background-color: #ff5c33;
+  border: 3px solid #cccccc;
+  color: #cccccc;
+}

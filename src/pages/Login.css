@@ -1,89 +1,89 @@
 .body {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  background-color: black;
+  display: flex;
   height: 100vh;
+  justify-content: center;
   width: 100%;
-  background-color: #000000;
 }
 
 .login {
-  display: flex;
   align-items: center;
-  flex-flow: column;
-  justify-content: center;
-  height: 300px;
-  width: 400px;
   background-color: #333333;
   border-radius: 10px;
+  display: flex;
+  flex-flow: column;
+  height: 300px;
+  justify-content: center;
+  width: 400px;
 }
 
 .login h1 {
-  width: 100%;
+  border-bottom: 1px solid #ff5c33;
   color: #e6e6e6;
   font-size: 40px;
-  text-align: center;
+  margin: 15px 0 10px;
   padding-bottom: 15px;
-  border-bottom: 1px solid #ff5c33;
-  margin: 15px 0 10px 0;
+  text-align: center;
+  width: 100%;
 }
 
 .form {
+  align-items: center;
   display: flex;
   flex-flow: column;
   justify-content: center;
-  align-items: center;
-  padding: 0 0 10px 0;
+  padding-bottom: 10px;
 }
 
 .form label {
+  align-items: center;
   display: flex;
   flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
   font-weight: 700;
+  justify-content: center;
+  width: 200px;
 }
 
 .form input {
-  margin: 10px;
-  padding: 15px;
-  border-radius: 10px;
   border: none;
+  border-radius: 10px;
+  margin: 10px;
   outline: none;
+  padding: 15px;
 }
 
 .form input::placeholder {
   color: #adadad;
-  font-weight: 600;
   font-size: 16px;
+  font-weight: 600;
 }
 
 .form button {
-  width: 125px;
-  padding: 10px;
-  border-radius: 10px;
-  outline: none;
   border: 3px solid #ff5c33;
+  border-radius: 10px;
   cursor: pointer;
-  transition: 0.3s;
-  text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 15px;
+  outline: none;
+  padding: 10px;
+  text-transform: uppercase;
+  transition: 0.3s;
+  width: 125px;
 }
 
 .form button:disabled {
+  border: #cccccc 3px solid;
   cursor: not-allowed;
-  transition: none;
-  border: 3px solid #cccccc;
   transition: 0.3s;
 }
 
 .form button:hover:enabled {
   background-color: #ff5c33;
-  color: #cccccc;
   border: 3px solid #cccccc;
+  color: #cccccc;
 }
 
 /* So falta mudar as cores */
+
 /* https://www.youtube.com/watch?v=eeHqZeJ9Vqc&ab_channel=CodingNepal */
