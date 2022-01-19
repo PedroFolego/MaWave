@@ -16,12 +16,12 @@ class Album extends React.Component {
       albumName: '',
       loading: true,
     };
-    this.changeLoading = this.changeLoading.bind(this);
+
+    this.searchAlbum = this.searchAlbum.bind(this);
   }
 
   componentDidMount() {
     this.searchAlbum();
-    this.changeLoading();
   }
 
   async searchAlbum() {
@@ -29,12 +29,7 @@ class Album extends React.Component {
 
     const musics = await getMusics(id);
     const { artistName, collectionName } = musics[0];
-    this.setState({ musics, artistName, albumName: collectionName });
-  }
-
-  changeLoading() {
-    this.setState((prev) => ({ loading: !prev.loading }));
-    console.log('entrou');
+    this.setState({ musics, artistName, albumName: collectionName, loading: false });
   }
 
   render() {
@@ -57,7 +52,6 @@ class Album extends React.Component {
                 <MusicCard
                   key={ music.trackName }
                   music={ music }
-                  changeLoading={ this.changeLoading }
                 />
               ))}
           </>)}

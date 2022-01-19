@@ -10,8 +10,10 @@ class MusicCard extends React.Component {
 
     this.state = {
       favorite: false,
+      loading: false,
     };
     this.saveSong = this.saveSong.bind(this);
+    this.checkFavorite = this.checkFavorite.bind(this);
   }
 
   componentDidMount() {
@@ -28,23 +30,20 @@ class MusicCard extends React.Component {
   }
 
   saveSong({ target: { checked } }) {
-    const { music, changeLoading } = this.props;
-    changeLoading();
-    this.setState((prevState) => ({ favorite: !prevState.favorite }));
+    this.setState((prevState) => ({ favorite: !prevState.favorite, loading: true }));
+    const { music } = this.props;
     if (checked) {
-      addSong(music).then(() => this.setState({ favorite: true }));
+      addSong(music).then(() => this.setState({ favorite: true, loading: false }));
     } else {
-      removeSong(music).then(() => this.setState({ favorite: false }));
+      removeSong(music).then(() => this.setState({ favorite: false, loading: false }));
     }
-    changeLoading();
   }
 
   render() {
     const { favorite, loading } = this.state;
-    const { music: { trackName, previewUrl, trackId }, changeLoading } = this.props;
+    const { music: { trackName, previewUrl, trackId } } = this.props;
     return (
       <div>
-        <button type="button" onClick={ this.saveSong }>aperte</button>
         <div className="container-music">
           <div className="music">
             <h4>{trackName}</h4>

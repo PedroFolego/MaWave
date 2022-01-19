@@ -33,7 +33,7 @@ class Favorites extends React.Component {
   }
 
   changeLoading() {
-    this.setState((prev) => (prev.loading === true ? { loading: false } : { loading: true }), console.log(this.state.loading));
+    this.setState({ loading: false });
   }
 
   render() {
@@ -46,7 +46,6 @@ class Favorites extends React.Component {
           .map((music) => (<MusicCard
             key={ music.trackName }
             music={ music }
-            changeLoading={ this.changeLoading }
           />))}
       </section>
     );

@@ -1,10 +1,11 @@
 .favorite-section {
+  align-items: center;
   display: flex;
   flex-flow: column;
-  align-items: center;
 }
+
 .favorite-card {
-  margin: 20px;
   color: #e6e6e6;
   font-size: 50px;
+  margin: 20px;
 }
