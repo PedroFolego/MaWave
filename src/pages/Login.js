@@ -3,7 +3,7 @@ import React from 'react';
 import LOWEST_NUMBER from '../constants';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
-import './Login.css';
+import '../style/Login.css';
 
 class Login extends React.Component {
   constructor() {

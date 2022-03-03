@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 import { getUser } from '../services/userAPI';
-import './Profile.css';
+import '../style/Profile.css';
 
 class Profile extends React.Component {
   constructor() {

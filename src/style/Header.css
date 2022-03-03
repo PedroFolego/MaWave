@@ -1,12 +1,15 @@
 .header {
+  background-color: black;
+  display: flex;
+  justify-content: center;
   width: 100%;
 }
 
 .header-section {
-  background-color: black;
   display: flex;
   height: 80px;
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 80%;
 }
 
 .header-section .logo-name {
@@ -15,7 +18,7 @@
 }
 
 .hide {
-  color:#e6e6e6;
+  color: #e6e6e6;
   display: none;
 }
 
@@ -57,7 +60,7 @@
 
 .header-section .link:hover {
   background-color: #ff5c33;
-  color: #333333;
+  color: #333;
 }
 
 .header-section .header-link {

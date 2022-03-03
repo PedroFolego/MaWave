@@ -9,7 +9,7 @@
 
 .login {
   align-items: center;
-  background-color: #333333;
+  background-color: #333;
   border-radius: 10px;
   display: flex;
   flex-flow: column;
@@ -73,17 +73,15 @@
 }
 
 .form button:disabled {
-  border: #cccccc 3px solid;
+  border: #ccc 3px solid;
   cursor: not-allowed;
   transition: 0.3s;
 }
 
 .form button:hover:enabled {
   background-color: #ff5c33;
-  border: 3px solid #cccccc;
-  color: #cccccc;
+  border: 3px solid #ccc;
+  color: #ccc;
 }
-
-/* So falta mudar as cores */
 
 /* https://www.youtube.com/watch?v=eeHqZeJ9Vqc&ab_channel=CodingNepal */

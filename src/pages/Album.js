@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import MusicCard from '../components/MusicCard';
 import getMusics from '../services/musicsAPI';
 import Loading from '../components/Loading';
-import './Album.css';
+import '../style/Album.css';
 
 class Album extends React.Component {
   constructor() {

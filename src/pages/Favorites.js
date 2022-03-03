@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
-import './Favorites.css';
+import '../style/Favorites.css';
 
 class Favorites extends React.Component {
   constructor() {
